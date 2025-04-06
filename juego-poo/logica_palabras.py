@@ -22,3 +22,11 @@ class JuegoPalabrasDificil:
             if palabra not in self.palabras_usadas:
                 self.palabras_usadas.add(palabra)
                 return categoria, palabra
+
+    def crear_desafio(self, palabra):
+        letras = list(palabra)
+        if self.dificultad >= 3:
+            letras_falsas = random.choices("qwxzv", k=2)
+            letras += letras_falsas
+        random.shuffle(letras)
+        return "".join(letras)
