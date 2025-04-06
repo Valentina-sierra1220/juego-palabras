@@ -1,6 +1,23 @@
 version = 1
 requires-python = ">=3.12"
 
+[manifest]
+members = [
+    "juego-poo",
+    "poo",
+]
+
+[[package]]
+name = "juego-poo"
+version = "0.1.0"
+source = { virtual = "juego-poo" }
+dependencies = [
+    { name = "pygame" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pygame", specifier = ">=2.6.1" }]
+
 [[package]]
 name = "poo"
 version = "0.1.0"
