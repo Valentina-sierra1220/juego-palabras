@@ -43,3 +43,14 @@ class JuegoPalabrasDificil:
         tiempo_limite = 20
         inicio = time.time()
 
+        while intentos > 0:
+            intento = input(f"✏️ Intenta adivinar la palabra (intentos restantes: {intentos}): ").lower()
+            tiempo = time.time() - inicio
+
+            if tiempo > tiempo_limite:
+                print(f"\n⏱️ ¡Te pasaste del tiempo! ({int(tiempo)} segundos)")
+                print("❌ Ronda perdida.")
+                self.vidas -= 1
+                return
+
+
