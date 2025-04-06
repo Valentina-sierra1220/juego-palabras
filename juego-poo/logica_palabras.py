@@ -63,6 +63,17 @@ class JuegoPalabrasDificil:
                 print("❌ Incorrecto.")
                 intentos -= 1
 
+                print(f"💀 Fallaste. La palabra era: {palabra}")
+                self.vidas -= 1
+                self.racha = 0
+
+    def verificar_logros(self):
+        if self.puntos >= 60:
+            self.logros.add("💥 Genio del vocabulario")
+        if self.racha >= 4:
+            self.logros.add("🔥 Racha épica (4 seguidas)")
+        if self.dificultad == 5:
+            self.logros.add("👑 Modo maestro activado")
 
 
 
