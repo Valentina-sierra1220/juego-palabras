@@ -14,3 +14,11 @@ class JuegoPalabrasDificil:
         self.dificultad = 1
         self.palabras_usadas = set()
         self.logros = set()
+
+    def elegir_palabra(self):
+        while True:
+            categoria = random.choice(list(self.categorias.keys()))
+            palabra = random.choice(self.categorias[categoria])
+            if palabra not in self.palabras_usadas:
+                self.palabras_usadas.add(palabra)
+                return categoria, palabra
