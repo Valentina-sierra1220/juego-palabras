@@ -52,6 +52,17 @@ class JuegoPalabrasDificil:
                 print("❌ Ronda perdida.")
                 self.vidas -= 1
                 return
+            if intento == palabra:
+                print("✅ ¡Correcto!")
+                self.puntos += 15 + self.racha * 5
+                self.racha += 1
+                self.dificultad = min(5, self.dificultad + 1)
+                self.verificar_logros()
+                return
+            else:
+                print("❌ Incorrecto.")
+                intentos -= 1
+
 
 
 
