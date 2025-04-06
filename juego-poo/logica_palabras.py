@@ -30,3 +30,16 @@ class JuegoPalabrasDificil:
             letras += letras_falsas
         random.shuffle(letras)
         return "".join(letras)
+
+    def jugar_ronda(self):
+        categoria, palabra = self.elegir_palabra()
+        mezcla = self.crear_desafio(palabra)
+
+        print(f"\n🧩 Letras mezcladas: {mezcla}")
+        print(f"📁 Categoría: {categoria.upper()}")
+        print("⏳ Tienes 20 segundos para adivinar la palabra...")
+
+        intentos = 3
+        tiempo_limite = 20
+        inicio = time.time()
+
