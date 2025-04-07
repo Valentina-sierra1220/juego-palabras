@@ -88,5 +88,18 @@ class JuegoPalabrasDificil:
             for logro in self.logros:
                 print("-", logro)
 
+if _name_ == "_main_":
+    juego = JuegoPalabrasDificil()
+    print("🎮 Bienvenido al juego de palabras difíciles")
+
+    while juego.vidas > 0:
+        juego.jugar_ronda()
+        juego.mostrar_estado()
+
+    juego.mostrar_logros()
+    print("\n🏁 ¡Juego terminado!")
+
+
+
 
 
