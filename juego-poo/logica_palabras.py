@@ -82,6 +82,11 @@ class JuegoPalabrasDificil:
         print(
             f"\n❤ Vidas: {self.vidas} | ⭐ Puntos: {self.puntos} | 🔥 Racha: {self.racha} | 🎯 Dificultad: {self.dificultad}")
 
+    def mostrar_logros(self):
+        if self.logros:
+            print("\n LOGROS DESBLOQUEADOS:")
+            for logro in self.logros:
+                print("-", logro)
 
 
 
