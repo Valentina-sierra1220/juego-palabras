@@ -99,6 +99,14 @@ if _name_ == "_main_":
     juego.mostrar_logros()
     print("\n🏁 ¡Juego terminado!")
 
+# Cambiar esto:
+def init(self):
+
+# Por esto:
+def _init_(self):
+
+
+
 
 
 
