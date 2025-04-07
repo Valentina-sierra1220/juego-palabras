@@ -1,5 +1,8 @@
 import random
 import time
+import random
+import time
+
 
 class JuegoPalabrasDificil:
     def _init_(self):
@@ -74,6 +77,10 @@ class JuegoPalabrasDificil:
             self.logros.add("🔥 Racha épica (4 seguidas)")
         if self.dificultad == 5:
             self.logros.add("👑 Modo maestro activado")
+
+    def mostrar_estado(self):
+        print(
+            f"\n❤ Vidas: {self.vidas} | ⭐ Puntos: {self.puntos} | 🔥 Racha: {self.racha} | 🎯 Dificultad: {self.dificultad}")
 
 
 
