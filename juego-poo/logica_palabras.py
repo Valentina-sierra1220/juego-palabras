@@ -1,7 +1,5 @@
 import random
 import time
-import random
-import time
 
 
 class JuegoPalabrasDificil:
@@ -26,15 +24,15 @@ class JuegoPalabrasDificil:
                 self.palabras_usadas.add(palabra)
                 return categoria, palabra
 
-    def crear_desafio(self, palabra):
+    def crear_desafio(self, palabra: any):
         letras = list(palabra)
         if self.dificultad >= 3:
-            letras_falsas = random.choices("qwxzv", k=2)
+            letras_falsas: any = random.choices("qwxzv", k=2)
             letras += letras_falsas
         random.shuffle(letras)
         return "".join(letras)
 
-    def jugar_ronda(self):
+    def jugar_ronda(self)-> None:
         categoria, palabra = self.elegir_palabra()
         mezcla = self.crear_desafio(palabra)
 
@@ -42,12 +40,12 @@ class JuegoPalabrasDificil:
         print(f"📁 Categoría: {categoria.upper()}")
         print("⏳ Tienes 20 segundos para adivinar la palabra...")
 
-        intentos = 3
-        tiempo_limite = 20
-        inicio = time.time()
+        intentos: int = 3
+        tiempo_limite: int = 20
+        inicio: float = time.time()
 
         while intentos > 0:
-            intento = input(f"✏️ Intenta adivinar la palabra (intentos restantes: {intentos}): ").lower()
+            intento: str = input(f"✏️ Intenta adivinar la palabra (intentos restantes: {intentos}): ").lower()
             tiempo = time.time() - inicio
 
             if tiempo > tiempo_limite:
@@ -55,11 +53,12 @@ class JuegoPalabrasDificil:
                 print("❌ Ronda perdida.")
                 self.vidas -= 1
                 return
+
             if intento == palabra:
                 print("✅ ¡Correcto!")
                 self.puntos += 15 + self.racha * 5
                 self.racha += 1
-                self.dificultad = min(5, self.dificultad + 1)
+                self.dificultad: int = min(5, self.dificultad + 1)
                 self.verificar_logros()
                 return
             else:
@@ -68,9 +67,9 @@ class JuegoPalabrasDificil:
 
                 print(f"💀 Fallaste. La palabra era: {palabra}")
                 self.vidas -= 1
-                self.racha = 0
+                self.racha: int = 0
 
-    def verificar_logros(self):
+    def verificar_logros(self) -> None:
         if self.puntos >= 60:
             self.logros.add("💥 Genio del vocabulario")
         if self.racha >= 4:
@@ -78,13 +77,12 @@ class JuegoPalabrasDificil:
         if self.dificultad == 5:
             self.logros.add("👑 Modo maestro activado")
 
-    def mostrar_estado(self):
-        print(
-            f"\n❤ Vidas: {self.vidas} | ⭐ Puntos: {self.puntos} | 🔥 Racha: {self.racha} | 🎯 Dificultad: {self.dificultad}")
+    def mostrar_estado(self) -> None:
+        print(f"\n❤ Vidas: {self.vidas} | ⭐ Puntos: {self.puntos} | 🔥 Racha: {self.racha} | 🎯 Dificultad: {self.dificultad}")
 
     def mostrar_logros(self):
         if self.logros:
-            print("\n LOGROS DESBLOQUEADOS:")
+            print("\n 🏆 LOGROS DESBLOQUEADOS:")
             for logro in self.logros:
                 print("-", logro)
 
@@ -99,12 +97,7 @@ if _name_ == "_main_":
     juego.mostrar_logros()
     print("\n🏁 ¡Juego terminado!")
 
-# Cambiar esto:
-def init(self):
 
-# Por esto:
-def _init_(self):
-def
 
 
 
