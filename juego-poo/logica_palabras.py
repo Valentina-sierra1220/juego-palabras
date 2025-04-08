@@ -86,7 +86,7 @@ class JuegoPalabrasDificil:
             for logro in self.logros:
                 print("-", logro)
 
-if _name_ == "_main_":
+if __name__== "_main___":
     juego = JuegoPalabrasDificil()
     print("🎮 Bienvenido al juego de palabras difíciles")
 
